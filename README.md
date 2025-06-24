@@ -75,7 +75,7 @@ Desenvolver uma API RESTful para gerenciar **pátios logísticos**, com foco na 
 
 ---
 
-## 🔜 Próximos Passos (Sugeridos)
+## 🔜 Próximos Passos (Novas implementações para o projeto)
 
 - [ ] Criar entidades como `Patio`, `Veiculo`, `Movimentacao`
 - [ ] Implementar autenticação via JWT (Spring Security)
