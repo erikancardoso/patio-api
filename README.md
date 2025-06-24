@@ -1,72 +1,85 @@
-✅ Análise de Requisitos – Projeto "Pátio API"
-📌 1. Objetivo do Projeto
-Desenvolver uma API RESTful para gerenciar pátios logísticos, com foco na organização, registro e controle das operações realizadas nesses locais.
+# 📋 Análise de Requisitos – Pátio API
 
-🧭 2. Público-alvo
-Equipe interna da Mottu
+## ✅ Objetivo do Projeto
 
-Sistemas e integrações que consumirão a API (ex: dashboard, aplicativos, ferramentas administrativas)
+Desenvolver uma API RESTful para gerenciar **pátios logísticos**, com foco na organização, registro e controle das operações realizadas nesses locais.
 
-🧱 3. Funcionalidades Principais (MVP)
-📂 Gestão de Pátios
-Criar, listar, atualizar e remover pátios
+---
 
-Atribuir localizações e capacidade operacional
+## 🧭 Público-alvo
 
-🚚 Controle de Veículos
-Entrada e saída de veículos nos pátios
+- Equipe interna da Mottu  
+- Sistemas e integrações que consumirão a API (ex: dashboard, aplicativos, ferramentas administrativas)
 
-Registro de horários e tipo de operação
+---
 
-👤 Usuários e Acessos (futuro)
-Controle de perfis: administrador, operador, supervisor
+## 🧱 Funcionalidades Principais (MVP)
 
-Autenticação e autorização via token (ex: JWT)
+### 📂 Gestão de Pátios
+- Criar, listar, atualizar e remover pátios
+- Atribuir localizações e capacidade operacional
 
-📦 Inventário e Recursos (futuro)
-Controle de ativos no pátio: containers, motos, etc.
+### 🚚 Controle de Veículos
+- Entrada e saída de veículos nos pátios
+- Registro de horários e tipo de operação
 
-Relatórios e dashboards de movimentações
+### 👤 Usuários e Acessos (futuro)
+- Controle de perfis: administrador, operador, supervisor
+- Autenticação e autorização via token (ex: JWT)
 
-🧑‍💻 4. Requisitos Técnicos
-Requisito	Descrição
-Backend	Spring Boot 3.4.5
-Documentação da API	Swagger Core 2 (manual)
-Formato da documentação	JSON acessível via /openapi.json
-Interface visual da documentação	Swagger UI em /swagger-ui/index.html (estático via /static)
-Empacotamento	Maven
-Testes	JUnit (habilitado via Surefire Plugin)
+### 📦 Inventário e Recursos (futuro)
+- Controle de ativos no pátio: containers, motos, etc.
+- Relatórios e dashboards de movimentações
 
-🗂️ 5. Estrutura do Projeto
-com.mottu.patio.controller – Controllers REST da API
+---
 
-com.mottu.patio.config – Configurações do Swagger e outros beans
+## 🧑‍💻 Requisitos Técnicos
 
-src/main/resources/static/swagger-ui/ – Arquivos estáticos da interface Swagger UI
+| Requisito                  | Descrição                              |
+|---------------------------|----------------------------------------|
+| **Backend**               | Spring Boot 3.4.5                      |
+| **Documentação da API**   | Swagger Core 2 (manual)                |
+| **Formato da documentação** | JSON acessível via `/openapi.json`   |
+| **Interface visual da documentação** | Swagger UI em `/swagger-ui/index.html` (estático) |
+| **Empacotamento**         | Maven                                  |
+| **Testes**                | JUnit (habilitado via Surefire Plugin) |
 
-openapi.json – Gerado a partir dos controllers e configurações
+---
 
-🧩 6. Integrações
-Integração	Status
-Swagger UI	✅ Funcional
-Spring REST	✅ Endpoints expostos e testáveis
-OpenAPI JSON	✅ Servido via /openapi.json
+## 🗂️ Estrutura do Projeto
 
-📝 7. Requisitos não-funcionais
-Item	Descrição
-Escalabilidade	Código preparado para expandir com autenticação, permissões, métricas
-Manutenibilidade	Separação de pacotes e uso de boas práticas
-Documentação	Integrada à API, via Swagger UI
+- `com.mottu.patio.controller` – Controllers REST da API  
+- `com.mottu.patio.config` – Configurações do Swagger e outros beans  
+- `src/main/resources/static/swagger-ui/` – Arquivos estáticos da interface Swagger UI  
+- `openapi.json` – Servido dinamicamente via controller (`OpenApiJsonController`)
 
-🔜 Próximos Passos (Sugeridos)
- Criar entidades (modelos) como Patio, Veiculo, Movimentacao
+---
 
- Implementar autenticação via JWT (Spring Security)
+## 🧩 Integrações
 
- Criar testes de integração para os endpoints principais
+| Integração        | Status     |
+|-------------------|------------|
+| Swagger UI        | ✅ Funcional |
+| Spring REST       | ✅ Endpoints expostos |
+| OpenAPI JSON      | ✅ Disponível em `/openapi.json` |
 
- Integrar com banco de dados (H2 para dev, PostgreSQL para produção)
+---
 
- Adicionar filtros e paginação nas listagens
+## 📝 Requisitos Não-Funcionais
 
- Gerar versão OpenAPI em YAML (opcional)
+| Item              | Descrição                                      |
+|-------------------|-----------------------------------------------|
+| **Escalabilidade**| Código preparado para expandir com novos módulos |
+| **Manutenibilidade** | Separação de pacotes, boas práticas de código |
+| **Documentação**  | Integrada à API via Swagger UI                |
+
+---
+
+## 🔜 Próximos Passos (Sugeridos)
+
+- [ ] Criar entidades como `Patio`, `Veiculo`, `Movimentacao`
+- [ ] Implementar autenticação via JWT (Spring Security)
+- [ ] Criar testes de integração para os endpoints principais
+- [ ] Integrar com banco de dados (H2 para dev, PostgreSQL para produção)
+- [ ] Adicionar filtros e paginação nas listagens
+- [ ] Gerar versão OpenAPI em YAML (opcional)
